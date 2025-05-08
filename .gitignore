@@ -1,1 +1,9 @@
+# Output folder
 /Out
+
+# Delphi
+__history
+__identcache
+*.local
+
+# FPC, Code Typhon, Lazarus

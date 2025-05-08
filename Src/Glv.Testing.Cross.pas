@@ -17,11 +17,11 @@ type
   TCrossTestCase = TTestCase;
   TCrossTestCaseClass = class of TTestCase;
 
-procedure CrossRegTest(ClassOfTest: TCrossTestCaseClass; const Subpath: string = '');
+procedure CrossRegTest(const ClassOfTest: TCrossTestCaseClass; const Subpath: string = '');
 
 implementation
 
-procedure CrossRegTest(ClassOfTest: TCrossTestCaseClass; const Subpath: string);
+procedure CrossRegTest(const ClassOfTest: TCrossTestCaseClass; const Subpath: string);
 begin
 {$IFDEF FPC}
   RegisterTest(Subpath, ClassOfTest);
