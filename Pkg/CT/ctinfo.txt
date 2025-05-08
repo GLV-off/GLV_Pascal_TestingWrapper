@@ -1,0 +1,14 @@
+=============================================
+  CodeTyphon Studio
+  Typhon IDE
+  Package Information file
+=============================================
+
+GlvTestCross
+
+Version: 0.0 Date: 2025-05-08 11:31
+
+
+
+
+
