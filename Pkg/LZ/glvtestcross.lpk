@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="5">
+    <PathDelim Value="\"/>
+    <Name Value="GlvTestCross"/>
+    <Type Value="RunAndDesignTime"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <IncludeFiles Value="..\..\Src"/>
+        <OtherUnitFiles Value="..\..\Src"/>
+        <UnitOutputDirectory Value="..\..\Out\$(TargetCPU)-$(TargetOS)\"/>
+      </SearchPaths>
+      <CodeGeneration>
+        <Optimizations>
+          <OptimizationLevel Value="0"/>
+        </Optimizations>
+      </CodeGeneration>
+    </CompilerOptions>
+    <Files>
+      <Item>
+        <Filename Value="..\..\Src\Glv.Testing.Cross.pas"/>
+        <UnitName Value="Glv.Testing.Cross"/>
+      </Item>
+    </Files>
+    <RequiredPkgs>
+      <Item>
+        <PackageName Value="FCL"/>
+      </Item>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>
