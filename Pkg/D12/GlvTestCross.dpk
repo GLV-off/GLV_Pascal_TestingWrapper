@@ -31,4 +31,7 @@ package GlvTestCross;
 requires
   rtl;
 
+contains
+  Glv.Testing.Cross in '..\..\Src\Glv.Testing.Cross.pas';
+
 end.
