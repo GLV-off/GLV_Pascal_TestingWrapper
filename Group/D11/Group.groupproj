@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2536D01D-DAD7-49C5-8E65-7B1533945B9A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\Pkg\D11\GlvTestCross.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="GlvTestCross">
+        <MSBuild Projects="..\..\Pkg\D11\GlvTestCross.dproj"/>
+    </Target>
+    <Target Name="GlvTestCross:Clean">
+        <MSBuild Projects="..\..\Pkg\D11\GlvTestCross.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GlvTestCross:Make">
+        <MSBuild Projects="..\..\Pkg\D11\GlvTestCross.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="GlvTestCross"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="GlvTestCross:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="GlvTestCross:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
