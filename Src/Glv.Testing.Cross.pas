@@ -1,6 +1,6 @@
 unit Glv.Testing.Cross;
 
-{$I 'test.inc'}
+{$I 'glv_test_cross.inc'}
 {$M+}
 
 interface
