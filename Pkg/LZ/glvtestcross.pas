@@ -2,20 +2,14 @@
   This source is only used to compile and install the package.
  }
 
-unit GlvTestCross;
+unit glvtestcross;
 
 {$warn 5023 off : no warning about unused units}
 interface
 
 uses
-  Glv.Testing.Cross, LazarusPackageIntf;
+  Glv.Testing.Cross;
 
 implementation
 
-procedure Register;
-begin
-end;
-
-initialization
-  RegisterPackage('GlvTestCross', @Register);
 end.
