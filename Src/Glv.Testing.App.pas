@@ -5,16 +5,14 @@
 
 interface
 
-uses
-  Glv.Testing.AppWrapper;
-
-function CreateApp(const AAppID: UnicodeString): TTestApp;
+procedure Run;
 
 implementation
 
 uses
   SysUtils,
-  StrUtils
+  StrUtils,
+  Glv.Testing.AppWrapper,
 {$IFDEF DUNITX}
   ,Glv.Testing.DunitXAppWrapper;
 {$ELSE DUNITX}
@@ -27,23 +25,23 @@ type
     procedure Run; override;
   end;
 
-function CreateApp(const AAppID: UnicodeString): TTestApp;
-const
-  IDS: TArray<UnicodeString> = ['dunitx'];
+procedure Run;
 var
-  CL: TTestAppClass;
-  TmpAppID: UnicodeString;
+  CL: TTestAppCLass;
+  A: TTestApp;
 begin
-  TmpAppID := LowerCase(AAppID);
-  case IndexStr(TmpAppID, IDS) of
 {$IFDEF DUNITX}
-    00: CL := TDUnitXTestApp;
+  CL := TDUnitXTestApp;
 {$ELSE DUNITX}
-    00: CL := TUnimplementedTestApp;
+  CL := TUnimplementedTestApp;
 {$ENDIF DUNITX}
-    else CL := TUnimplementedTestApp;
+
+  A := CL.Create;
+  try
+    A.Run();
+  finally
+     FreeAndNil(A);
   end;
-  Result := CL.Create;
 end;
 
 { TUnimplementedTestApp }
