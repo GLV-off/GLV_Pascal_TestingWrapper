@@ -11,14 +11,10 @@ implementation
 
 uses
   SysUtils,
-  StrUtils,
   Glv.Testing.AppWrapper
-{$IFDEF DUNITX}
-  ,Glv.Testing.DunitXAppWrapper;
-{$ELSE DUNITX}
-  ;
-{$ENDIF DUNITX}
-
+{$IFDEF DUNITX},Glv.Testing.DunitXAppWrapper{$ENDIF DUNITX}
+{$IFDEF FPUNIT},Glv.Testing.FPUnitAppWrapper{$ENDIF FPUNIT}
+;
 type
   TUnimplementedTestApp = class(TTestApp)
   public
@@ -30,11 +26,16 @@ var
   CL: TTestAppCLass;
   A: TTestApp;
 begin
+
 {$IFDEF DUNITX}
   CL := TDUnitXTestApp;
-{$ELSE DUNITX}
+{$ELSE}
+{$IFDEF FPUNIT}
+  CL :=TFPUnitTestApp;
+{$ELSE}
   CL := TUnimplementedTestApp;
-{$ENDIF DUNITX}
+{$ENDIF}
+{$ENDIF}
 
   A := CL.Create;
   try

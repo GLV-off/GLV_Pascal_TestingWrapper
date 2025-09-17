@@ -20,8 +20,11 @@
           <OptimizationLevel Value="0"/>
         </Optimizations>
       </CodeGeneration>
+      <Other>
+        <CustomOptions Value="-dFPUNIT"/>
+      </Other>
     </CompilerOptions>
-    <Files Count="3">
+    <Files Count="4">
       <Item1>
         <Filename Value="../../Src/Glv.Testing.Cross.pas"/>
         <UnitName Value="Glv.Testing.Cross"/>
@@ -34,8 +37,17 @@
         <Filename Value="../../Src/Glv.Testing.AppWrapper.pas"/>
         <UnitName Value="Glv.Testing.AppWrapper"/>
       </Item3>
+      <Item4>
+        <Filename Value="../../Src/Glv.Testing.FPUnitAppWrapper.pas"/>
+        <UnitName Value="Glv.Testing.FPUnitAppWrapper"/>
+      </Item4>
     </Files>
     <CompatibilityMode Value="True"/>
+    <RequiredPkgs Count="1">
+      <Item1>
+        <PackageName Value="fpcunittestrunner"/>
+      </Item1>
+    </RequiredPkgs>
     <UsageOptions>
       <UnitPath Value="$(PkgOutDir)"/>
     </UsageOptions>

@@ -8,7 +8,8 @@ unit GlvTestCross;
 interface
 
 uses
-  Glv.Testing.Cross, Glv.Testing.App, Glv.Testing.AppWrapper;
+  Glv.Testing.Cross, Glv.Testing.App, Glv.Testing.AppWrapper, 
+  Glv.Testing.FPUnitAppWrapper;
 
 implementation
 
