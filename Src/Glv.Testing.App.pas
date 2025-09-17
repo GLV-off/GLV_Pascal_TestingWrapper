@@ -12,7 +12,7 @@ implementation
 uses
   SysUtils,
   StrUtils,
-  Glv.Testing.AppWrapper,
+  Glv.Testing.AppWrapper
 {$IFDEF DUNITX}
   ,Glv.Testing.DunitXAppWrapper;
 {$ELSE DUNITX}
