@@ -1,3 +1,9 @@
+{
+  Модуль:      Glv.Testing.Cross
+  Описание:
+  Разработчик:
+  Изменения:
+}
 unit Glv.Testing.Cross;
 
 {$I 'glv_test_cross.inc'}

@@ -2,13 +2,13 @@
   This source is only used to compile and install the package.
  }
 
-unit glvtestcross;
+unit GlvTestCross;
 
 {$warn 5023 off : no warning about unused units}
 interface
 
 uses
-  Glv.Testing.Cross;
+  Glv.Testing.Cross, Glv.Testing.App, Glv.Testing.AppWrapper;
 
 implementation
 

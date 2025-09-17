@@ -21,11 +21,19 @@
         </Optimizations>
       </CodeGeneration>
     </CompilerOptions>
-    <Files Count="1">
+    <Files Count="3">
       <Item1>
         <Filename Value="../../Src/Glv.Testing.Cross.pas"/>
         <UnitName Value="Glv.Testing.Cross"/>
       </Item1>
+      <Item2>
+        <Filename Value="../../Src/Glv.Testing.App.pas"/>
+        <UnitName Value="Glv.Testing.App"/>
+      </Item2>
+      <Item3>
+        <Filename Value="../../Src/Glv.Testing.AppWrapper.pas"/>
+        <UnitName Value="Glv.Testing.AppWrapper"/>
+      </Item3>
     </Files>
     <CompatibilityMode Value="True"/>
     <UsageOptions>

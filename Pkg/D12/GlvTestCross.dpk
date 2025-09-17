@@ -29,9 +29,14 @@ package GlvTestCross;
 {$IMPLICITBUILD ON}
 
 requires
-  rtl;
+  rtl,
+  DUnitXRuntime,
+  dunitrtl;
 
 contains
-  Glv.Testing.Cross in '..\..\Src\Glv.Testing.Cross.pas';
+  Glv.Testing.Cross in '..\..\Src\Glv.Testing.Cross.pas',
+  Glv.Testing.AppWrapper in '..\..\Src\Glv.Testing.AppWrapper.pas',
+  Glv.Testing.DunitXAppWrapper in '..\..\Src\Glv.Testing.DunitXAppWrapper.pas',
+  Glv.Testing.App in '..\..\Src\Glv.Testing.App.pas';
 
 end.
