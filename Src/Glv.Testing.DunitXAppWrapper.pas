@@ -10,6 +10,9 @@ uses
 
 type
   TDUnitXTestApp = class(TTestApp)
+  strict protected
+    function GetName: UnicodeString; override;
+    procedure SetName(const AName: UnicodeString); override;
   public
     procedure Run; override;
   end;
@@ -64,6 +67,15 @@ begin
       System.Writeln(E.ClassName, ': ', E.Message);
   end;
 {$ENDIF}
+end;
+
+function TDUnitXTestApp.GetName: UnicodeString;
+begin
+  Result := '';
+end;
+
+procedure TDUnitXTestApp.SetName(const AName: UnicodeString);
+begin
 end;
 
 end.

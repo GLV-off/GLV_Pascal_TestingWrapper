@@ -5,7 +5,7 @@
 
 interface
 
-procedure Run;
+procedure Run(const AName: UnicodeString = '');
 
 implementation
 
@@ -18,10 +18,11 @@ uses
 type
   TUnimplementedTestApp = class(TTestApp)
   public
+    constructor Create(const AName: UnicodeString);
     procedure Run; override;
   end;
 
-procedure Run;
+procedure Run(const AName: UnicodeString = '');
 var
   CL: TTestAppCLass;
   A: TTestApp;
@@ -31,13 +32,14 @@ begin
   CL := TDUnitXTestApp;
 {$ELSE}
 {$IFDEF FPUNIT}
-  CL :=TFPUnitTestApp;
+  CL := TFPUnitTestApp;
 {$ELSE}
   CL := TUnimplementedTestApp;
 {$ENDIF}
 {$ENDIF}
 
   A := CL.Create;
+  A.Name := AName;
   try
     A.Run();
   finally
@@ -47,10 +49,13 @@ end;
 
 { TUnimplementedTestApp }
 
+constructor TUnimplementedTestApp.Create(const AName: UnicodeString);
+begin
+end;
+
 procedure TUnimplementedTestApp.Run;
 begin
   WriteLn('Not implemented app type!');
-  ReadLn;
 end;
 
 end.
