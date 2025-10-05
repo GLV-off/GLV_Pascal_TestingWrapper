@@ -26,6 +26,9 @@ implementation
 uses
   Classes,
   consoletestrunner,
+{$IFDEF WINDOWS}
+  WIndows,
+{$ENDIF WINDOWS}
   glvtestcross;
 
 type
@@ -50,6 +53,10 @@ procedure TFPUnitTestApp.Run;
 var
   Application: TMyTestRunner;
 begin
+{$IFDEF WINDOWS}
+  SetConsoleCP(1251);
+  SetConsoleOutputCP(1251);
+{$ENDIF WINDOWS}
   DefaultRunAllTests := True;
   DefaultFormat := fPlain;
   Application := TMyTestRunner.Create(nil);
