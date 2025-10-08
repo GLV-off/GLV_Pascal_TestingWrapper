@@ -27,7 +27,6 @@ var
   CL: TTestAppCLass;
   A: TTestApp;
 begin
-
 {$IFDEF DUNITX}
   CL := TDUnitXTestApp;
 {$ELSE}
