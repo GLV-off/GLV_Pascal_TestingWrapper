@@ -116,6 +116,7 @@
         <DCCReference Include="..\..\Src\Glv.Testing.AppWrapper.pas"/>
         <DCCReference Include="..\..\Src\Glv.Testing.DunitXAppWrapper.pas"/>
         <DCCReference Include="..\..\Src\Glv.Testing.App.pas"/>
+        <DCCReference Include="..\..\Src\Glv.Testing.AttributesWrapper.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

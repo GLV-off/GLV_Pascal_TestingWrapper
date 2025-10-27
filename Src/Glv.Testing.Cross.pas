@@ -13,18 +13,37 @@ interface
 
 uses
 {$IFDEF FPC}
+  Glv.Testing.AttributesWrapper,
   FpcUnit,
   TestRegistry;
 {$ELSE FPC}
 {$IFDEF DUNITX}
   DUnitX.TestFramework;
 {$ELSE DUNITX}
+  Glv.Testing.AttributesWrapper,
   TestFramework;
 {$ENDIF DUNITX}
 
 {$ENDIF FPC}
 
 type
+
+{$IFNDEF DUNITX}
+  TestAttribute = Glv.Testing.AttributeWrapper.TestAttribute;
+  TestFixtureAttribute = Glv.Testing.AttributeWrapper.TestFixtureAttribute;
+  CategoryAttribute = Glv.Testing.AttributeWrapper.CategoryAttribute;
+  SetupAttribute = Glv.Testing.AttributeWrapper.SetupAttribute;
+  TeardownAttribute = Glv.Testing.AttributeWrapper.TeardownAttribute;
+  IgnoreAttribute = Glv.Testing.AttributeWrapper.IgnoreAttribute;
+{$ELSE DUNITX}
+  TestAttribute = DUnitX.TestFramework.TestAttribute;
+  TestFixtureAttribute = DUnitX.TestFramework.TestFixtureAttribute;
+  CategoryAttribute = DUnitX.TestFramework.CategoryAttribute;
+  SetupAttribute = DUnitX.TestFramework.SetupAttribute;
+  TeardownAttribute = DUnitX.TestFramework.TeardownAttribute;
+  IgnoreAttribute = DUnitX.TestFramework.IgnoreAttribute;
+{$ENDIF DUNITX}
+
 {$IFNDEF DUNITX}
 {$IFDEF FPC}
   TCrossTestCase = TTestCase;
@@ -38,6 +57,7 @@ type
   protected
     procedure SetUp; virtual;
     procedure TearDown; virtual;
+  public
     procedure CheckTrue(const AExpr: Boolean; const AMsg: string = '');
     procedure CheckFalse(const AExpr: Boolean; const AMsg: string = '');
     procedure CheckEquals(const AExpected, AActual: UnicodeString; const AMsg: string = ''); overload;

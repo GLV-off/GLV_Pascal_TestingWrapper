@@ -1,7 +1,5 @@
 package GlvTestCross;
 
-{$I 'glv_test_cross.inc'}
-
 {$R *.res}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
@@ -34,16 +32,14 @@ package GlvTestCross;
 
 requires
   rtl,
-  DUnitXRuntime
-{$IFDEF WIN64}
-,dunitrtl
-{$ENDIF WIN64}
-;
+  DUnitXRuntime,
+  dunitrtl;
 
 contains
   Glv.Testing.Cross in '..\..\Src\Glv.Testing.Cross.pas',
   Glv.Testing.AppWrapper in '..\..\Src\Glv.Testing.AppWrapper.pas',
   Glv.Testing.DunitXAppWrapper in '..\..\Src\Glv.Testing.DunitXAppWrapper.pas',
-  Glv.Testing.App in '..\..\Src\Glv.Testing.App.pas';
+  Glv.Testing.App in '..\..\Src\Glv.Testing.App.pas',
+  Glv.Testing.AttributesWrapper in '..\..\Src\Glv.Testing.AttributesWrapper.pas';
 
 end.
