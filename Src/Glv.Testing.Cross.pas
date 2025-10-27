@@ -16,12 +16,43 @@ uses
   FpcUnit,
   TestRegistry;
 {$ELSE FPC}
+{$IFDEF DUNITX}
+  DUnitX.TestFramework;
+{$ELSE DUNITX}
   TestFramework;
+{$ENDIF DUNITX}
+
 {$ENDIF FPC}
 
 type
+{$IFNDEF DUNITX}
+{$IFDEF FPC}
   TCrossTestCase = TTestCase;
   TCrossTestCaseClass = class of TTestCase;
+{$ELSE FPC}
+  TCrossTestCase = TTestCase;
+  TCrossTestCaseClass = class of TTestCase;
+{$ENDIF FPC}
+{$ELSE DUNITX}
+  TSimpleTestCase = class(TObject)
+  protected
+    procedure SetUp; virtual;
+    procedure TearDown; virtual;
+    procedure CheckTrue(const AExpr: Boolean; const AMsg: string = '');
+    procedure CheckFalse(const AExpr: Boolean; const AMsg: string = '');
+    procedure CheckEquals(const AExpected, AActual: UnicodeString; const AMsg: string = ''); overload;
+    procedure CheckEquals(const AExpected, AActual: Int64; const AMsg: string = ''); overload;
+    procedure CheckEquals(const AExpected, AActual: Integer; const AMsg: string = ''); overload;
+    procedure CheckNotNull(const AObj: TObject; const AMSg: UnicodeString = '');
+    procedure CheckNull(const AObj: TObject; const AMSg: UnicodeString = '');
+    procedure Fail(const AMsg: string);
+  end;
+
+  TCrossTestCase = TSimpleTestCase;
+
+  TCrossTestCaseClass = class of TCrossTestCase;
+
+{$ENDIF DUNITX}
 
 procedure CrossRegTest(const ClassOfTest: TCrossTestCaseClass; const Subpath: string = '');
 
@@ -32,8 +63,71 @@ begin
 {$IFDEF FPC}
   RegisterTest(Subpath, ClassOfTest);
 {$ELSE FPC}
+{$IFDEF DUNITX}
+  TDUnitx.RegisterTestFixture(ClassOfTest, Subpath);
+{$ELSE DUNITX}
   RegisterTest(ClassOfTest.Suite);
+{$ENDIF DUNITX}
 {$ENDIF FPC}
 end;
+
+{$IFDEF DUNITX}
+
+{ TSimpleTestCase }
+
+procedure TSimpleTestCase.Setup;
+begin
+end;
+
+procedure TSimpleTestCase.TearDOwn;
+begin
+end;
+
+procedure TSimpleTestCase.CheckNotNull(const AObj: TObject;
+  const AMSg: UnicodeString);
+begin
+  ASsert.IsNotNull(AObj, AMsg);
+end;
+
+procedure TSimpleTestCase.CheckNull(const AObj: TObject;
+  const AMSg: UnicodeString);
+begin
+  Assert.IsNull(AObj, AMsg);
+end;
+
+procedure TSimpleTestCase.CheckTrue(const AExpr: Boolean; const AMsg: string);
+begin
+  Assert.IsTrue(AExpr, AMsg);
+end;
+
+procedure TSimpleTestCase.Fail(const AMsg: string);
+begin
+  ASsert.Fail(AMsg);
+end;
+
+procedure TSimpleTestCase.CheckEquals(const AExpected, AActual: UnicodeString;
+  const AMsg: string);
+begin
+  Assert.AreEqual(AExpected, AActual, AMsg);
+end;
+
+procedure TSimpleTestCase.CheckEquals(const AExpected, AActual: Int64;
+  const AMsg: string);
+begin
+  Assert.AreEqual(AExpected, AActual, AMsg);
+end;
+
+procedure TSimpleTestCase.CheckEquals(const AExpected, AActual: Integer;
+  const AMsg: string);
+begin
+  Assert.AreEqual(AExpected, AActual, AMsg);
+end;
+
+procedure TSimpleTestCase.CheckFalse(const AExpr: Boolean; const AMsg: string);
+begin
+  Assert.IsFalse(AExpr, AMsg);
+end;
+
+{$ENDIF DUNITX}
 
 end.
