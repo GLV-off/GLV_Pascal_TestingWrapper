@@ -54,8 +54,8 @@ var
   Application: TMyTestRunner;
 begin
 {$IFDEF WINDOWS}
-  SetConsoleCP(1251);
-  SetConsoleOutputCP(1251);
+  SetConsoleCP(CP_UTF8);
+  SetConsoleOutputCP(CP_UTF8);
 {$ENDIF WINDOWS}
   DefaultRunAllTests := True;
   DefaultFormat := fPlain;

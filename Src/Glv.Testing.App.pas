@@ -27,7 +27,6 @@ var
   CL: TTestAppCLass;
   A: TTestApp;
 begin
-
 {$IFDEF DUNITX}
   CL := TDUnitXTestApp;
 {$ELSE}
@@ -37,11 +36,17 @@ begin
   CL := TUnimplementedTestApp;
 {$ENDIF}
 {$ENDIF}
-
   A := CL.Create;
   A.Name := AName;
   try
-    A.Run();
+    try
+      A.Run();
+    except
+       on E: Exception do
+       begin
+         WriteLn(E.Classname, ': ', E.Message);
+       end;
+    end;
   finally
      FreeAndNil(A);
   end;
