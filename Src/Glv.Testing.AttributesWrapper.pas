@@ -13,9 +13,17 @@ interface
 
 uses
   SysUtils,
+
   Classes;
 
 type
+{$IFDEF FPC}
+  TCustomAttribute = class
+  end;
+
+{$ENDIF FPC}
+
+
   TestAttribute = class(TCustomAttribute)
   public
     constructor Create(const AText: string);

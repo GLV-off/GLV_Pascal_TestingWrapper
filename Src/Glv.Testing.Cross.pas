@@ -29,12 +29,14 @@ uses
 type
 
 {$IFNDEF DUNITX}
+{$IFNDEF FPC}
   TestAttribute = Glv.Testing.AttributeWrapper.TestAttribute;
   TestFixtureAttribute = Glv.Testing.AttributeWrapper.TestFixtureAttribute;
   CategoryAttribute = Glv.Testing.AttributeWrapper.CategoryAttribute;
   SetupAttribute = Glv.Testing.AttributeWrapper.SetupAttribute;
   TeardownAttribute = Glv.Testing.AttributeWrapper.TeardownAttribute;
   IgnoreAttribute = Glv.Testing.AttributeWrapper.IgnoreAttribute;
+{$ENDIF FPC}
 {$ELSE DUNITX}
   TestAttribute = DUnitX.TestFramework.TestAttribute;
   TestFixtureAttribute = DUnitX.TestFramework.TestFixtureAttribute;
