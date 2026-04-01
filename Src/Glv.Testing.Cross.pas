@@ -38,6 +38,7 @@ type
   IgnoreAttribute = Glv.Testing.AttributeWrapper.IgnoreAttribute;
 {$ENDIF FPC}
 {$ELSE DUNITX}
+  Assert = DUnitX.Assert;
   TestAttribute = DUnitX.TestFramework.TestAttribute;
   TestFixtureAttribute = DUnitX.TestFramework.TestFixtureAttribute;
   CategoryAttribute = DUnitX.TestFramework.CategoryAttribute;

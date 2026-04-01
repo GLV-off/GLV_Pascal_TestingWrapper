@@ -9,7 +9,7 @@ interface
 
 uses
   Glv.Testing.Cross, Glv.Testing.App, Glv.Testing.AppWrapper, 
-  Glv.Testing.FPUnitAppWrapper;
+  Glv.Testing.FPUnitAppWrapper, Glv.Testing.Assertion;
 
 implementation
 
