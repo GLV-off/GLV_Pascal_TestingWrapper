@@ -24,6 +24,7 @@
         <CustomOptions Value="-dFPUNIT"/>
       </Other>
     </CompilerOptions>
+    <Version Major="1"/>
     <Files Count="4">
       <Item1>
         <Filename Value="../../Src/Glv.Testing.Cross.pas"/>
