@@ -9,8 +9,6 @@ uses
 
 type
   TAssertions = class
-  strict protected
-    FCase: TTestCase;
   public
     procedure AreEqual();
   end;
