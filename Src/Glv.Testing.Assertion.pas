@@ -10,7 +10,7 @@ uses
 type
   TAssertions = class
   public
-    procedure AreEqual();
+    //procedure AreEqual();
   end;
 
 implementation
