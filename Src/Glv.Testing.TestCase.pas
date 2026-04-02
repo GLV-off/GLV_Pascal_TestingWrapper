@@ -4,6 +4,17 @@ unit Glv.Testing.TestCase;
 
 interface
 
+uses
+  Glv.Testing.Assertion;
+
+type
+  TSafeTestCase = class
+  strict protected
+    //FAssert: TAssertions;
+    //property Assert: TAssertions read FAssert;
+  public
+
+  end;
 
 implementation
 
