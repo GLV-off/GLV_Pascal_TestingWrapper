@@ -23,24 +23,22 @@ type
 
 implementation
 
-procedure TFakeTestCase.TestHookUp;
-begin
-  Fail('Напишите ваш тест');
-end;
-
 procedure TFakeTestCase.SetUp;
 begin
-
 end;
 
 procedure TFakeTestCase.TearDown;
 begin
+end;
 
+procedure TFakeTestCase.TestHookUp;
+begin
+  Assert.AreEqual('first', 'first', 'Thouse strings not match!');
 end;
 
 initialization
 
-CrossRegTest(TFakeTestCase);
+CrossRegTest(TFakeTestCase, 'Unit');
 
 end.
 

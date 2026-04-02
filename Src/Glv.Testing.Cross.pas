@@ -14,6 +14,7 @@ interface
 uses
 {$IFDEF FPC}
   Glv.Testing.AttributesWrapper,
+  Glv.Testing.Assertion,
   FpcUnit,
   TestRegistry;
 {$ELSE FPC}
@@ -30,13 +31,14 @@ type
 
 {$IFNDEF DUNITX}
 {$IFNDEF FPC}
-  Assert = Glv.Testing.Assertion.TAssertWrapper;
   TestAttribute = Glv.Testing.AttributeWrapper.TestAttribute;
   TestFixtureAttribute = Glv.Testing.AttributeWrapper.TestFixtureAttribute;
   CategoryAttribute = Glv.Testing.AttributeWrapper.CategoryAttribute;
   SetupAttribute = Glv.Testing.AttributeWrapper.SetupAttribute;
   TeardownAttribute = Glv.Testing.AttributeWrapper.TeardownAttribute;
   IgnoreAttribute = Glv.Testing.AttributeWrapper.IgnoreAttribute;
+{$ELSE FPC}
+  Assert = Glv.Testing.Assertion.TAssertWrapper;
 {$ENDIF FPC}
 {$ELSE DUNITX}
   Assert = DUnitX.Assert;

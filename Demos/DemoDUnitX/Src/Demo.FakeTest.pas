@@ -3,10 +3,11 @@ unit Demo.FakeTest;
 interface
 
 uses
-  DUnitX.TestFramework;
+  Glv.Testing.Cross;
+  // DUnitX.TestFramework;
 
 type
-  [TestFixture]
+  [TestFixture('FakeTest')]
   TFakeTest = class
   public
     [Setup]
