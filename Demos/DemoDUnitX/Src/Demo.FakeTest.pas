@@ -1,23 +1,26 @@
 unit Demo.FakeTest;
 
+{$I 'demo.inc'}
+
 interface
 
 uses
   Glv.Testing.Cross;
-  // DUnitX.TestFramework;
 
 type
+  [Category('Unit')]
   [TestFixture('FakeTest')]
-  TFakeTest = class
+  TFakeTest = class(TCrossTestCase)
   public
     [Setup]
     procedure Setup;
+
     [TearDown]
     procedure TearDown;
-    // Sample Methods
-    // Simple single Test
+
     [Test]
     procedure Test1;
+
     // Test with TestCase Attribute to supply parameters.
     [Test]
     [TestCase('TestA','1,2')]
@@ -45,6 +48,6 @@ end;
 
 initialization
 
-TDUnitX.RegisterTestFixture(TFakeTest);
+CrossRegTest(TFakeTest, 'Unit');
 
 end.

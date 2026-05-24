@@ -1,8 +1,6 @@
 unit Demo.TestCase;
 
-{$IFDEF FPC}
-{$MODE DELPHI}{$H+}{$M+}
-{$ENDIF FPC}
+{$I 'demo.inc'}
 
 interface
 
@@ -34,6 +32,9 @@ end;
 procedure TFakeTestCase.TestHookUp;
 begin
   Assert.AreEqual('first', 'first', 'Thouse strings not match!');
+  Assert.IsTrue(true, 'this is IsTrue as');
+  Assert.IsFalse(false, '');
+  Assert.AreEqual(1, 1);
 end;
 
 initialization
