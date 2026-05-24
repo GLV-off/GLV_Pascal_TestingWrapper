@@ -1,8 +1,6 @@
 program DemoFPUnit;
 
-{$IFDEF FPC}
-{$MODE DELPHI}{$H+}{$M+}
-{$ENDIF FPC}
+{$I 'demo.inc'}
 {$DEFINE FPUNIT}
 
 uses

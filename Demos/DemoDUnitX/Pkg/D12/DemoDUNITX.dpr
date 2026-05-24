@@ -4,7 +4,7 @@ program DemoDUNITX;
 {$APPTYPE CONSOLE}
 {$ENDIF}
 {$STRONGLINKTYPES ON}
-
+{$I 'demo.inc'}
 
 uses
   Glv.Testing.App,
