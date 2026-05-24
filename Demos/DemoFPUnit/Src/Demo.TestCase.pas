@@ -1,8 +1,6 @@
 unit Demo.TestCase;
 
-{$IFDEF FPC}
-{$MODE DELPHI}{$H+}{$M+}
-{$ENDIF FPC}
+{$I 'demo.inc'}
 
 interface
 
@@ -23,24 +21,25 @@ type
 
 implementation
 
-procedure TFakeTestCase.TestHookUp;
-begin
-  Fail('Напишите ваш тест');
-end;
-
 procedure TFakeTestCase.SetUp;
 begin
-
 end;
 
 procedure TFakeTestCase.TearDown;
 begin
+end;
 
+procedure TFakeTestCase.TestHookUp;
+begin
+  Assert.AreEqual('first', 'first', 'Thouse strings not match!');
+  Assert.IsTrue(true, 'this is IsTrue as');
+  Assert.IsFalse(false, '');
+  Assert.AreEqual(1, 1);
 end;
 
 initialization
 
-CrossRegTest(TFakeTestCase);
+CrossRegTest(TFakeTestCase, 'Unit');
 
 end.
 
