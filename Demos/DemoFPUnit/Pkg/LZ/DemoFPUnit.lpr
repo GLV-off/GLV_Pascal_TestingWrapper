@@ -8,7 +8,7 @@ uses
   Glv.Testing.App;
 
 begin
-  Glv.Testing.App.Run;
+  Glv.Testing.App.Run();
 {$IFDEF DEBUG}
   ReadLn;
 {$ENDIF DEBUG}

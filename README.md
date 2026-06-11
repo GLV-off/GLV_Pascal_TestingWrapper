@@ -23,13 +23,10 @@ All entry point project files *dpr, *lpr *ctp should contain
 simple runner execution logic from Glv.Testing.App module.
 
 ``` pascal
-// 
 program Testrunnner;
-
 uses
   Glv.Testing.App,
   My_Test in '..\..\src\My_Test.pas';
-
 begin
   Glv.Testing.App.Run();
 end;
@@ -66,6 +63,8 @@ implementation
 
 procedure TMyTest.TestSimple;
 begin
+  // This works becouse Glv.Testing.Cross imports Glv.Testing.Assertion unit
+  // in FPC environment and implement compatible by 
   Assert.AreEqual(4, 2  + 2, 'This should work!');
 end;
 
