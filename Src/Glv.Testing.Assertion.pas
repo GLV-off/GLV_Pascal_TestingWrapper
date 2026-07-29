@@ -11,6 +11,9 @@ type
     class procedure IsFalse(const AValue: Boolean; const AMsg: string = ''); static;
     class procedure AreEqual(const AExpected, AActual: Int64; const AMsg: string = ''); static; overload;
     class procedure AreEqual(const AExpected, AActual: UnicodeString; const AMsg: string = ''); static; overload;
+
+    class procedure IsNull(const APtr: TObject; const AMsg: string = ''); static; overload;
+    class procedure IsNotNull(const APtr: TObject; const AMsg: string = ''); static; overload;
   end;
 
 implementation
@@ -36,6 +39,16 @@ end;
 class procedure TAssertWrapper.AreEqual(const AExpected, AActual: UnicodeString; const AMsg: string);
 begin
   TAssert.CheckEquals(AExpected, AActual, AMsg);
+end;
+
+class procedure TAssertWrapper.IsNull(const APtr: TObject; const AMsg: string);
+begin
+  TAssert.CheckNull(APtr, AMsg);
+end;
+
+class procedure TAssertWrapper.IsNotNull(const APtr: TObject; const AMsg: string);
+begin
+  TAssert.CheckNotNull(APtr, AMsg);
 end;
 
 end.
