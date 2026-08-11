@@ -17,6 +17,8 @@ uses
 ;
 type
   TUnimplementedTestApp = class(TTestApp)
+  strict private
+    FName: UnicodeString;
   public
     constructor Create(const AName: UnicodeString);
     procedure Run; override;
@@ -43,9 +45,7 @@ begin
       A.Run();
     except
        on E: Exception do
-       begin
          WriteLn(E.Classname, ': ', E.Message);
-       end;
     end;
   finally
      FreeAndNil(A);
@@ -56,11 +56,12 @@ end;
 
 constructor TUnimplementedTestApp.Create(const AName: UnicodeString);
 begin
+  FName := AName;
 end;
 
 procedure TUnimplementedTestApp.Run;
 begin
-  WriteLn('Not implemented app type!');
+  WriteLn('Not implemented app type with text: [', FName, ']');
 end;
 
 end.
