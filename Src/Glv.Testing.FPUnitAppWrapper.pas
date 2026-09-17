@@ -70,6 +70,7 @@ begin
   finally
     Application.Free();
   end;
+  ReadLn();
 end;
 
 function TFPUnitTestApp.GetName: UnicodeString;

@@ -8,7 +8,7 @@
       <SearchPaths>
         <IncludeFiles Value="$(ProjOutDir);../../Src"/>
         <OtherUnitFiles Value="../../Src"/>
-        <UnitOutputDirectory Value="../../Out/$(TargetCPU)-$(TargetOS)"/>
+        <UnitOutputDirectory Value="../../Out/$(TargetCPU)-$(TargetOS)/$(BuildMode)"/>
       </SearchPaths>
       <Parsing>
         <SyntaxOptions>
@@ -20,6 +20,11 @@
           <OptimizationLevel Value="0"/>
         </Optimizations>
       </CodeGeneration>
+      <Linking>
+        <Debugging>
+          <DebugInfoType Value="dsDwarf3"/>
+        </Debugging>
+      </Linking>
       <Other>
         <CustomOptions Value="-dFPUNIT"/>
       </Other>
