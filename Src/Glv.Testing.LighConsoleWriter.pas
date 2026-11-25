@@ -13,7 +13,7 @@ uses
   plaintestreport;
 
 type
-
+  { Custom writer in console }
   TLightResultsWriter = class(TCustomResultsWriter)
   strict private
     procedure SkipLvl(var f: Text; const InLvl: Integer);
@@ -25,6 +25,7 @@ type
     procedure WriteTestFooter(ATest: TTest; ALevel: integer; ATiming: TDateTime); override;
 
     procedure WriteSuiteHeader(ATestSuite: TTestSuite; ALevel: integer); override;
+
     procedure WriteSuiteFooter(ATestSuite: TTestSuite; ALevel: integer;
       ATiming: TDateTime; ANumRuns: integer; ANumErrors: integer;
       ANumFailures: integer; ANumIgnores: integer); override;
@@ -58,16 +59,14 @@ end;
 procedure TLightResultsWriter.WriteTestHeader(ATest: TTest; ALevel: integer;
   ACount: integer);
 var
-  f: text;
+  F: Text;
 begin
-  system.Assign(f, FileName);
-  rewrite(f);
-  SkipLvl(f, ALevel);
-  //write(f, ATest.Stat
-  //ATest.LastStep;
-  writeln(f, 'WriteTestHeader: CN = ',ATest.CountTestCases,',TN = ',
+  System.Assign(f, FileName);
+  ReWrite(F);
+  SkipLvl(F, ALevel);
+  WriteLn(F, 'WriteTestHeader: CN = ', ATest.CountTestCases, ',TN = ',
     ATest.TestName, ', LVL=', ALevel, ', C=', ACount);
-  close(f);
+  Close(F);
 end;
 
 procedure TLightResultsWriter.WriteTestFooter(ATest: TTest; ALevel: integer;
@@ -103,11 +102,11 @@ procedure TLightResultsWriter.WriteSuiteFooter(ATestSuite: TTestSuite;
 var
   f: text;
 begin
-  //system.Assign(f, FileName);
-  //rewrite(f);
-  //SkipLvl(f, ALevel);
-  //writeln(f, 'WriteSuiteFooter -- here');
-  //close(f);
+  system.Assign(f, FileName);
+  rewrite(f);
+  SkipLvl(f, ALevel);
+  writeln(f, 'WriteSuiteFooter -- here');
+  close(f);
 end;
 
 constructor TLightResultsWriter.Create(aOwner: TComponent);

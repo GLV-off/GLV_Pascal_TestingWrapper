@@ -31,7 +31,7 @@ uses
 {$IFDEF WINDOWS}
   WIndows,
 {$ENDIF WINDOWS}
-  glvtestcross,
+  GlvTestCross,
   GLV.Testing.LighConsoleWriter;
 
 type
@@ -42,17 +42,17 @@ type
 
 function TMyTestRunner.GetResultsWriter: TCustomResultsWriter;
 begin
-  //case FormatParam of
-  //  fPlain:
-  //    begin
-  //      Result := TLightResultsWriter.Create(nil);
-  //      Result.SkipTiming := True;
-  //      Result.Sparse := True; { sparce == no exception }
-  //      Result.SkipAddressInfo := True;
-  //    end;
-  //  else Result := inherited GetResultsWriter;
-  //end;
-  Result := inherited GetResultsWriter;
+  case FormatParam of
+    fPlain:
+      begin
+        Result := TLightResultsWriter.Create(nil);
+        Result.SkipTiming := True;
+        Result.Sparse := True; { sparce == no exception }
+        Result.SkipAddressInfo := True;
+      end;
+    else Result := inherited GetResultsWriter;
+  end;
+  //Result := inherited GetResultsWriter;
 end;
   
 constructor TFPUnitTestApp.Create;

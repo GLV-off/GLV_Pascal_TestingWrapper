@@ -1,0 +1,37 @@
+
+ Time:00.001 N:24 E:0 F:0 I:0
+  Unit Time:00.001 N:24 E:0 F:0 I:0
+    TDemosTest Time:00.000 N:1 E:0 F:0 I:0
+      00.000  TestDateUtils
+    TCustomLogTest Time:00.000 N:2 E:0 F:0 I:0
+      00.000  TestHookUp
+      00.000  TestUnicodeText
+    TLogLvlTest Time:00.000 N:1 E:0 F:0 I:0
+      00.000  TestAsStr
+    TLockLogTest Time:00.000 N:5 E:0 F:0 I:0
+      00.000  TestAcquireBeforeLogReleaseAfter
+      00.000  TestReleaseOnException
+      00.000  TestBorrowedSyncNotFreed
+      00.000  TestOwnedSyncFreed
+      00.000  TestDefaultSync
+    TLogBuilderTest Time:00.000 N:9 E:0 F:0 I:0
+      00.000  TestNoSinksRaises
+      00.000  TestAddNilRaises
+      00.000  TestSingleSinkIsReturned
+      00.000  TestTwoSinksMergedInGroup
+      00.000  TestOutputOrderFollowsAdd
+      00.000  TestBuildTransfersOwnership
+      00.000  TestRebuildReturnsNewGraph
+      00.000  TestWithLockWrapsWholeGraph
+      00.000  TestLockRequestConsumedByBuild
+    TLogHolderTest Time:00.001 N:6 E:0 F:0 I:0
+      00.000  TestInstRoutesMessage
+      00.000  TestReassignKeepsOldGraphAlive
+      00.000  TestReassignRetiredGraphTwice
+      00.000  TestNilInstRaises
+      00.001  TestHotSwap
+      00.000  TestAnsiStringOverloadKeepsText
+
+Number of run tests: 24
+Number of errors:    0
+Number of failures:  0
