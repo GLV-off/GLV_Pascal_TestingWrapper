@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
-  <Package Version="5">
+  <Package Version="6">
     <Name Value="GlvTestCross"/>
     <AddToProjectUsesSection Value="True"/>
     <CompilerOptions>
@@ -30,37 +30,40 @@
       </Other>
     </CompilerOptions>
     <Version Major="1"/>
-    <Files Count="6">
-      <Item1>
+    <Files>
+      <Item>
         <Filename Value="../../Src/Glv.Testing.Cross.pas"/>
         <UnitName Value="Glv.Testing.Cross"/>
-      </Item1>
-      <Item2>
+      </Item>
+      <Item>
         <Filename Value="../../Src/Glv.Testing.App.pas"/>
         <UnitName Value="Glv.Testing.App"/>
-      </Item2>
-      <Item3>
+      </Item>
+      <Item>
         <Filename Value="../../Src/Glv.Testing.AppWrapper.pas"/>
         <UnitName Value="Glv.Testing.AppWrapper"/>
-      </Item3>
-      <Item4>
+      </Item>
+      <Item>
         <Filename Value="../../Src/Glv.Testing.FPUnitAppWrapper.pas"/>
         <UnitName Value="Glv.Testing.FPUnitAppWrapper"/>
-      </Item4>
-      <Item5>
+      </Item>
+      <Item>
         <Filename Value="../../Src/Glv.Testing.Assertion.pas"/>
         <UnitName Value="Glv.Testing.Assertion"/>
-      </Item5>
-      <Item6>
+      </Item>
+      <Item>
         <Filename Value="../../Src/Glv.Testing.TestCase.pas"/>
         <UnitName Value="Glv.Testing.TestCase"/>
-      </Item6>
+      </Item>
+      <Item>
+        <Filename Value="../../Src/Glv.Testing.LighConsoleWriter.pas"/>
+        <UnitName Value="Glv.Testing.LighConsoleWriter"/>
+      </Item>
     </Files>
-    <CompatibilityMode Value="True"/>
-    <RequiredPkgs Count="1">
-      <Item1>
+    <RequiredPkgs>
+      <Item>
         <PackageName Value="fpcunittestrunner"/>
-      </Item1>
+      </Item>
     </RequiredPkgs>
     <UsageOptions>
       <UnitPath Value="$(PkgOutDir)"/>
